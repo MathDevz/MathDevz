@@ -1,31 +1,89 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Doodle Jump | 3kh0</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Common styles for the entire website */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #000; /* Keep the header black */
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #6b3e9e;
+        }
+    </style>
+    <title>Palladium HQ</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+</head>
+<body>
+    <header>
+        <h1>Palladium HQ</h1>
+    </header>
+
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Proxy.html">Proxy</a>
+        <a href="Apps.html">Apps</a>
+        <a href="Games.html">Games</a>
+        <a href="Services.html">Services</a>
+    </nav>
+
     <div class="container">
-      <canvas id="canvas">Aww, your browser doesn't support HTML5!</canvas>
-      <div id="mainMenu">
-        <h1>doodle jump</h1>
-        <h3>using HTML5,</h3>
-        <h3>...by <a href="https://3kh0.github.io/" target="_blank">3kh0</a></h3>
-        <p class="info">use <span class="key left">←</span> <span class="key right">→</span> to move and space to (re) start...</p>
-        <a class="button" href="javascript:init()">Play</a>
-      </div>
-      <div id="gameOverMenu">
-        <h1>game over!</h1>
-        <h3 id="go_score">you scored 0 points</h3>
-        <a class="button" href="javascript:reset()">Restart</a>
-      </div>
-      <img id="sprite" src="sprites.png"/>
-      <div id="scoreBoard">
-        <p id="score">0</p>
-      </div>
+        <canvas id="canvas">Aww, your browser doesn't support HTML5!</canvas>
+        <div id="mainMenu">
+            <h1>doodle jump</h1>
+            <h3>using HTML5,</h3>
+            <h3>...by <a href="https://3kh0.github.io/" target="_blank">3kh0</a></h3>
+            <p class="info">use <span class="key left">←</span> <span class="key right">→</span> to move and space to (re) start...</p>
+            <a class="button" href="javascript:init()">Play</a>
+        </div>
+        <div id="gameOverMenu">
+            <h1>game over!</h1>
+            <h3 id="go_score">you scored 0 points</h3>
+            <a class="button" href="javascript:reset()">Restart</a>
+        </div>
+        <img id="sprite" src="sprites.png"/>
+        <div id="scoreBoard">
+            <p id="score">0</p>
+        </div>
     </div>
+
     <script src="main.js"></script>
     <script src="/js/main.js"></script>
-  </body>
+</body>
 </html>
