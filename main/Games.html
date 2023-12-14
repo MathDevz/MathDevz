@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="image.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Common styles for the entire website */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #000; /* Keep the header black */
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #6b3e9e;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .column {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .column:hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .column:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+    <title>Palladium HQ</title>
+</head>
+<body>
+
+    <header>
+        <h1>Palladium HQ</h1>
+    </header>
+
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="proxy.html">Proxy</a>
+        <a href="Apps.html">Apps</a>
+        <a href="Games.html">Games</a>
+        <a href="Services.html">Services</a>
+    </nav>
+
+    <div class="grid">
+        <div class="column">
+            <a href="/doodle-jump/index.html"><img src="/doodle-jump/doodle.png" alt="Doodle Jump"></a>
+        </div>
+        <div class="column">
+            <a href="link2.html"><img src="image2.jpg" alt="Image 2"></a>
+        </div>
+        <div class="column">
+            <a href="link3.html"><img src="image3.jpg" alt="Image 3"></a>
+        </div>
+        <!-- Add more columns as needed -->
+        <div class="column">
+            <a href="link4.html"><img src="image4.jpg" alt="Image 4"></a>
+        </div>
+        <div class="column">
+            <a href="link5.html"><img src="image5.jpg" alt="Image 5"></a>
+        </div>
+        <div class="column">
+            <a href="link6.html"><img src="image6.jpg" alt="Image 6"></a>
+        </div>
+        <!-- Add more columns as needed -->
+    </div>
+
+</body>
+</html>
