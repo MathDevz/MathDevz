@@ -123,10 +123,12 @@ margin-top: 220px
 
   <div class="search-container">
     <input type="text" class="search-box" placeholder="Search...">
+    <form>
     <button class="search-button">Search</button>
+    </form>
   </div>
   <script>
-  form.addEventListener("submit", async (event) => {
+  document.getElementsByClassName("search-button")[0].addEventListener("submit", async (event) => {
     event.preventDefault();
     try {
       await registerSW();
@@ -134,7 +136,7 @@ margin-top: 220px
       alert(err.toString());
       throw err;
     }
-    const url = search(address.value, searchEngine.value);
+    const url = search(document.getElementsByClassName("search-box")[0].value, "https://www.google.com/search?q=%s");
     window.location.href=url;
   });
   </script>
