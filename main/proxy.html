@@ -123,12 +123,12 @@ margin-top: 220px
 
   <div class="search-container">
     <input type="text" class="search-box" placeholder="Search...">
-    <form>
+    <form class="form">
     <button class="search-button">Search</button>
     </form>
   </div>
   <script>
-  document.getElementsByClassName("search-button")[0].addEventListener("submit", async (event) => {
+  document.getElementsByClassName("form")[0].addEventListener("submit", async (event) => {
     event.preventDefault();
     try {
       await registerSW();
