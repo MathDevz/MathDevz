@@ -137,7 +137,7 @@ margin-top: 220px
       throw err;
     }
     const url = search(document.getElementsByClassName("search-box")[0].value, "https://www.google.com/search?q=%s");
-    window.location.href=url;
+    window.location.href=__uv$config.prefix + __uv$config.encodeUrl(url);
   });
   </script>
 </body>
