@@ -34,6 +34,7 @@
     </div>
 
     <script>
+        // Function to apply and save settings
         function applySettings() {
             const newTitle = document.getElementById("titleInput").value;
             const newFavicon = document.getElementById("faviconInput").value;
@@ -47,8 +48,30 @@
                 favicon.href = newFavicon;
             }
 
+            // Save settings to localStorage
+            localStorage.setItem("customTitle", newTitle);
+            localStorage.setItem("customFavicon", newFavicon);
+
             alert("Settings applied successfully!");
         }
+
+        // Function to load saved settings when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedTitle = localStorage.getItem("customTitle");
+            const savedFavicon = localStorage.getItem("customFavicon");
+
+            // Apply saved settings if available
+            if (savedTitle) {
+                document.title = savedTitle;
+                document.getElementById("titleInput").value = savedTitle;
+            }
+
+            if (savedFavicon) {
+                const favicon = document.querySelector("link[rel='icon']");
+                favicon.href = savedFavicon;
+                document.getElementById("faviconInput").value = savedFavicon;
+            }
+        });
     </script>
 </body>
 </html>
