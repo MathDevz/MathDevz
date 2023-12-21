@@ -1,126 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="https://github.com/nlgg3r1234hfh/MathDevz/blob/main/main/image.png?raw=true">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Common styles for the entire website */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
-            display: flex;
-            flex-direction: column;
-        }
+  <script src="/uv/uv.bundle.js" defer></script>
+  <script src="/uv/uv.config.js" defer></script>
+  <script src="/register-sw.js" defer></script>
+  <script src="/search.js" defer></script>
+  <script src="/error.js" defer></script>
 
-        header {
-            background-color: #000; /* Keep the header black */
-            padding: 15px;
-            text-align: center;
-            color: #fff;
-        }
+  <link rel="icon" type="image/x-icon" href="https://github.com/nlgg3r1234hfh/MathDevz/blob/main/main/image.png?raw=true">
+  <meta charset="UTF-8">
+  <style>
+    /* Common styles for the entire website */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+      display: flex;
+      flex-direction: column;
+    }
 
-        h1 {
-            margin: 0;
-        }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #000;
-            padding: 10px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    header {
+      background-color: #000; /* Keep the header black */
+      padding: 15px;
+      text-align: center;
+      color: #fff;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 20px;
-            transition: background-color 0.3s ease;
-        }
+    h1 {
+      margin: 0;
+    }
 
-        nav a:hover {
-            background-color: #6b3e9e;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            justify-content: center;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+    }
 
-        .column {
-            box-sizing: border-box;
-            width: 200px;
-            height: 200px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
+    nav a:hover {
+      background-color: #6b3e9e;
+    }
 
-        .column:hover {
-            transform: scale(1.1);
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
+    .column {
+      box-sizing: border-box;
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
 
-        .column:hover img {
-            transform: scale(1.1);
-        }
-    </style>
-    <title>Palladium HQ</title>
+    .column:hover {
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .column:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+  <title>Palladium HQ</title>
 </head>
 <body>
+  <canvas id="particleCanvas"></canvas>
 
-    <header>
-        <h1>Palladium HQ</h1>
-    </header>
+  <header>
+    <h1>Palladium HQ</h1>
+  </header>
 
-    <nav>
-        <a href="Home.html">Home</a>
-        <a href="proxy.html">Proxy</a>
-        <a href="Apps.html">Apps</a>
-        <a href="Games.html">Games</a>
-        <a href="Services.html">Services</a>
-    </nav>
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="proxy.html">Proxy</a>
+    <a href="Apps.html">Apps</a>
+    <a href="Games.html">Games</a>
+    <a href="Services.html">Services</a>
+  </nav>
 
-    <div class="grid">
-        <div class="column">
-            <a href="/Apps/geforce.html"><img src="/Icons/geforce.png" alt="Geforce"></a>
-        </div>
-        <div class="column">
-            <a href="/Apps/google.html"><img src="/Icons/google.png" alt="Google"></a>
-        </div>
-        <div class="column">
-            <a href="link3.html"><img src="image3.jpg" alt="Image 3"></a>
-        </div>
-        <!-- Add more columns as needed -->
-        <div class="column">
-            <a href="link4.html"><img src="image4.jpg" alt="Image 4"></a>
-        </div>
-        <div class="column">
-            <a href="link5.html"><img src="image5.jpg" alt="Image 5"></a>
-        </div>
-        <div class="column">
-            <a href="link6.html"><img src="image6.jpg" alt="Image 6"></a>
-        </div>
-        <!-- Add more columns as needed -->
+  <div class="grid">
+    <div class="column">
+      <a href="/Apps/geforce.html"><img src="/Icons/geforce.png" alt="Geforce"></a>
     </div>
+    <div class="column">
+      <a href="/Apps/google.html"><img src="/Icons/google.png" alt="Google"></a>
+    </div>
+    <div class="column">
+      <a href="link3.html"><img src="image3.jpg" alt="Image 3"></a>
+    </div>
+    <!-- Add more columns as needed -->
+    <div class="column">
+      <a href="link4.html"><img src="image4.jpg" alt="Image 4"></a>
+    </div>
+    <div class="column">
+      <a href="link5.html"><img src="image5.jpg" alt="Image 5"></a>
+    </div>
+    <div class="column">
+      <a href="link6.html"><img src="image6.jpg" alt="Image 6"></a>
+    </div>
+    <!-- Add more columns as needed -->
+  </div>
 
+  <script>
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const numParticles = 100;
+
+    function Particle() {
+      this.x = Math.random() * canvas.width;
+      this.y = 0;
+      this.radius = Math.random() * 5 + 1;
+      this.speed = Math.random() * 5 + 1;
+      this.opacity = Math.random() * 0.5 + 0.5;
+      this.color = `rgba(148, 87, 235, ${Math.random()})`; // Shades of purple
+
+      this.update = () => {
+        this.y += this.speed;
+
+        if (this.y > canvas.height) {
+          this.y = 0;
+          this.x = Math.random() * canvas.width;
+        }
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      };
+    }
+
+    function createParticles() {
+      for (let i = 0; i < numParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+      }
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    createParticles();
+    animateParticles();
+  </script>
 </body>
 </html>
