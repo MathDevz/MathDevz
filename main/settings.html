@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://github.com/nlgg3r1234hfh/MathDevz/blob/main/main/image.png?raw=true">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Palladium HQ</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+    </header>
+
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Proxy.html">Proxy</a>
+        <a href="Apps.html">Apps</a>
+        <a href="Games.html">Games</a>
+        <a href="Services.html">Services</a>
+        <a href="settings.html">Settings</a> <!-- Link to the settings page -->
+    </nav>
+
+    <div class="settings-container">
+        <h2>Customize Your Settings</h2>
+
+        <label for="titleInput">Change Website Title:</label>
+        <input type="text" id="titleInput" placeholder="Enter new title">
+
+        <label for="faviconInput">Change Favicon URL:</label>
+        <input type="text" id="faviconInput" placeholder="Enter new favicon URL">
+
+        <button class="nice-button" onclick="applySettings()">Apply Settings</button>
+    </div>
+
+    <script>
+        function applySettings() {
+            const newTitle = document.getElementById("titleInput").value;
+            const newFavicon = document.getElementById("faviconInput").value;
+
+            // Change website title
+            document.title = newTitle || "Palladium HQ";
+
+            // Change favicon
+            const favicon = document.querySelector("link[rel='icon']");
+            if (newFavicon) {
+                favicon.href = newFavicon;
+            }
+
+            alert("Settings applied successfully!");
+        }
+    </script>
+</body>
+</html>
