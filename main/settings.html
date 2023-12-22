@@ -33,6 +33,13 @@
         <button class="nice-button" onclick="applySettings()">Apply Settings</button>
     </div>
 
+  <button class="open-site-button">about:blank</button>
+
+
+</body>
+</html>
+
+
     <script>
         // Function to apply and save settings
         function applySettings() {
@@ -72,6 +79,12 @@
                 document.getElementById("faviconInput").value = savedFavicon;
             }
         });
-    </script>
+        
+  document.querySelector('.open-site-button').addEventListener('click', () => {
+    const yourSiteUrl = 'https://www.yoursite.com'; // Replace with your site URL
+    window.open(yourSiteUrl, '_blank');
+  });
+</script>
+
 </body>
 </html>
