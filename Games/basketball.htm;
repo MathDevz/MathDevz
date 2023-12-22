@@ -1,0 +1,74 @@
+<link rel="icon" type="image/x-icon" href="https://github.com/nlgg3r1234hfh/MathDevz/blob/main/main/image.png?raw=true">
+<title>Palladium HQ</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #; /* Default background color */
+    }
+
+    #backButton {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 9999; /* Make sure it stays in front of other elements */
+    }
+
+    #backButton .arrow-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.7); /* Light background */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for visibility */
+    }
+
+    #backButton .arrow {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 15px solid #333; /* Arrow color */
+      transform: rotate(180deg); /* Rotate the arrow to face left */
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="backButton" onclick="goBack()" class="light">
+    <div class="arrow-circle">
+      <div class="arrow"></div>
+    </div>
+  </div>
+
+  <div id="content">
+    <iframe id="iframe" style="width:100%;height:100%;position:absolute;left:0px;top:0px;border:0px;" ></iframe><script>document.getElementById("iframe").src=window.location.origin+"/service/hvtrs8%2F-hvmngcmgs%2Cngtnidy%2Carp-bcsievbcln-qtcrq%2Fknfez.jtol"; 
+//replace the string with encoded url ending
+</script>
+  </div>
+
+  <script>
+    function goBack() {
+      // Implement your go back logic here
+      window.history.back();
+    }
+  </script>
+
+  <script>
+    // Toggle dark mode
+    const body = document.body;
+    const backButton = document.getElementById('backButton');
+
+    function toggleDarkMode() {
+      body.classList.toggle('dark');
+      backButton.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
