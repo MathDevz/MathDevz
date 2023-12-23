@@ -39,8 +39,8 @@
     <a href="/main/Services.html">Services</a>
     <a href="/main/settings.html">Settings</a>
   </nav>
-<div class="snowflakes" aria-hidden="true">
-    <!-- Snowflakes will be dynamically generated here -->
+ <div class="snowflakes" aria-hidden="true">
+    <!-- No initial emojis, will be added dynamically -->
   </div>
   <section>
     <h2>Welcome to Palladium HQ</h2>
@@ -107,6 +107,23 @@
 
     // createParticles();
     // animateParticles();
+// Function to generate emojis as snowflakes
+function generateSnowflakes() {
+  const emojis = ["❄️"]; // Add more emojis if needed
+  const container = document.querySelector('.snowflakes');
+
+  for (let i = 0; i < 50; i++) { // Adjust the number of emojis
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random falling speed
+    container.appendChild(snowflake);
+  }
+}
+
+// Generate the snowflakes on page load
+window.addEventListener('load', generateSnowflakes);
 
   </script>
 </body>
