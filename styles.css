@@ -98,21 +98,22 @@ footer {
     background-color: #6b3e9e; /* Darker Purple on hover */
     transform: scale(1.05);
 }
-.snowflake {
-      position: fixed;
+ .snowflake {
+      position: absolute;
       color: #fff;
       user-select: none;
       pointer-events: none;
+      opacity: 0.7;
       animation: snowfall linear infinite;
     }
 
     @keyframes snowfall {
       0% {
-        transform: translateY(-5vh);
+        transform: translateY(-5vh) rotate(0deg);
         opacity: 0;
       }
       100% {
-        transform: translateY(100vh);
+        transform: translateY(100vh) rotate(360deg);
         opacity: 1;
       }
     }
