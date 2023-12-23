@@ -98,3 +98,21 @@ footer {
     background-color: #6b3e9e; /* Darker Purple on hover */
     transform: scale(1.05);
 }
+.snowflake {
+      position: fixed;
+      color: #fff;
+      user-select: none;
+      pointer-events: none;
+      animation: snowfall linear infinite;
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translateY(-5vh);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+    }
