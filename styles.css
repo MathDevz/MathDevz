@@ -98,22 +98,51 @@ footer {
     background-color: #6b3e9e; /* Darker Purple on hover */
     transform: scale(1.05);
 }
- .snowflake {
-      position: absolute;
-      color: #fff;
-      user-select: none;
-      pointer-events: none;
-      opacity: 0.7;
-      animation: snowfall linear infinite;
-    }
 
-    @keyframes snowfall {
-      0% {
-        transform: translateY(-5vh) rotate(0deg);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 1;
-      }
-    }
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Additional styling for snowflake appearance */
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 10s;
+}
+
+.snowflake:nth-child(2) {
+  left: 20%;
+  animation-duration: 15s;
+}
+
+.snowflake:nth-child(3) {
+  left: 30%;
+  animation-duration: 12s;
+}
+
+.snowflake:nth-child(4) {
+  left: 40%;
+  animation-duration: 18s;
+}
