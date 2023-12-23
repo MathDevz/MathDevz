@@ -39,9 +39,11 @@
     <a href="/main/Services.html">Services</a>
     <a href="/main/settings.html">Settings</a>
   </nav>
- <div class="snowflakes" aria-hidden="true">
-    <!-- No initial emojis, will be added dynamically -->
-  </div>
+<div class="snowflakes">
+  <!-- 10 snowflakes -->
+  <div class="snowflake">❄️</div>
+  <!-- Repeat this div for additional snowflakes -->
+</div>
   <section>
     <h2>Welcome to Palladium HQ</h2>
     <p>This is an experimental site, do not rely on anything working, thanks</p>
@@ -107,28 +109,6 @@
 
     // createParticles();
     // animateParticles();
-// Function to generate emojis as snowflakes
-function generateSnowflakes() {
-  const emojis = ["❄️"]; // Add more emojis if needed
-  const container = document.querySelector('.snowflakes');
-
-  function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    snowflake.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-    snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-    snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random falling speed
-    container.appendChild(snowflake);
-
-    setTimeout(() => {
-      snowflake.remove(); // Remove snowflake after animation ends
-    }, 5000); // Adjust based on your animation duration
-  }
-
-  setInterval(createSnowflake, 500); // Interval to create new snowflakes
-}
-
-window.addEventListener('load', generateSnowflakes);
 
 
   </script>
