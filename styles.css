@@ -127,17 +127,28 @@ footer {
   }
 }
 
-/* Manually positioning snowflakes */
-/* Adjust the number of .snowflake classes as needed */
-.snowflake:nth-child(1) {
-  left: 10vw;
-  top: -50vh;
-  animation-duration: 6s;
+/* Generate snowflakes dynamically using CSS */
+.snowflakes::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust starting position */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: falling linear infinite;
 }
 
-.snowflake:nth-child(2) {
-  left: 20vw;
-  top: -70vh;
-  animation-duration: 7s;
+@keyframes falling {
+  0% {
+    transform: translateY(-50vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Create multiple snowflakes */
+.snowflakes::before {
+  box-shadow: 20px 20px white, 40px 40px white, 60px 60px white, 80px 80px white, 100px 100px white, 120px 120px white, 140px 140px white, 160px 160px white, 180px 180px white, 200px 200px white, 220px 220px white, 240px 240px white, 260px 260px white, 280px 280px white, 300px 300px white, 320px 320px white, 340px 340px white, 360px 360px white, 380px 380px white, 400px 400px white; /* Add more box-shadow for additional snowflakes */
 }
 }
