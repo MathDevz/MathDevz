@@ -112,8 +112,8 @@
 
       const initialX = Math.random() * window.innerWidth;
       const initialY = -20; // Start snowflakes above the viewport
-      const initialDelay = Math.random() * 5;
-      const animationDuration = Math.random() * 10 + 5;
+      const initialDelay = Math.random() * 1;
+      const animationDuration = Math.random() * 1 + 0.5; // Adjusted speed here
       const size = Math.random() * 10 + 5;
 
       snowflake.style.left = `${initialX}px`;
@@ -133,7 +133,7 @@
     function generateSnowfall() {
       setInterval(() => {
         createSnowflake();
-      }, 500); // Interval between creating new snowflakes (milliseconds)
+      }, 100); // Interval between creating new snowflakes (milliseconds)
     }
 
     generateSnowfall();
