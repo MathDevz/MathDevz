@@ -105,15 +105,13 @@
 
     // createParticles();
     // animateParticles();
- const numSnowflakes = 100; // Adjust number of snowflakes
-
     function createSnowflake() {
       const snowflake = document.createElement('span');
       snowflake.innerHTML = '&bull;'; // You can change the snowflake symbol here
       snowflake.classList.add('snowflake');
 
       const initialX = Math.random() * window.innerWidth;
-      const initialY = Math.random() * window.innerHeight;
+      const initialY = -20; // Start snowflakes above the viewport
       const initialDelay = Math.random() * 5;
       const animationDuration = Math.random() * 10 + 5;
       const size = Math.random() * 10 + 5;
@@ -125,12 +123,15 @@
       snowflake.style.fontSize = `${size}px`;
 
       document.body.appendChild(snowflake);
+
+      setTimeout(() => {
+        snowflake.remove(); // Remove snowflake after it falls out of view
+        createSnowflake(); // Generate a new snowflake
+      }, animationDuration * 1000 + initialDelay * 1000);
     }
 
     function generateSnowfall() {
-      for (let i = 0; i < numSnowflakes; i++) {
-        createSnowflake();
-      }
+      createSnowflake();
     }
 
     generateSnowfall();
