@@ -110,40 +110,25 @@
 // Function to create a snowflake element
 // Function to create a snowflake element
 function createSnowflake() {
-  const snowflake = document.createElement('div');
-  snowflake.classList.add('snowflake');
-  snowflake.textContent = '❄️';
-  document.querySelector('.snowflakes').appendChild(snowflake);
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.textContent = '❄️';
+      document.querySelector('.snowflakes').appendChild(snowflake);
 
-  // Set a random starting position along the top of the screen
-  const startPosition = Math.random() * window.innerWidth;
-  snowflake.style.left = `${startPosition}px`;
-  snowflake.style.top = '0';
-
-  // Animate snowflake falling
-  snowflake.animate(
-    [
-      { transform: `translateY(0)`, opacity: 1 },
-      { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
-    ],
-    {
-      duration: Math.random() * 5000 + 3000, // Random duration for falling (between 3s and 8s)
-      easing: 'linear',
-      iterations: Infinity
+      const startPosition = Math.random() * window.innerWidth;
+      snowflake.style.left = `${startPosition}px`;
+      snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Vary the falling speed
     }
-  );
-}
 
-// Function to create a line of falling snowflakes
-function createSnowfallLine() {
-  const numberOfSnowflakes = 20; // Number of snowflakes in a line
-  for (let i = 0; i < numberOfSnowflakes; i++) {
-    createSnowflake();
-  }
-}
+    // Function to continuously add snowflakes
+    function createSnowfall() {
+      setInterval(() => {
+        createSnowflake();
+      }, 200); // Adjust this value to control the rate of snowfall (milliseconds)
+    }
 
-// Start creating the line of falling snowflakes
-createSnowfallLine();
+    // Start creating the horizontal falling snowflakes
+    createSnowfall();
 
   </script>
 </body>
