@@ -200,36 +200,26 @@ footer {
 }
 
 
-.snowflakes {
-  z-index: 9999;
-}
 
-.snowflake {
-  position: fixed;
-  top: -10%;
-  color: #fff;
-  font-size: 1em;
-  font-family: Arial;
-  text-shadow: 0 0 1px #000;
-  user-select: none;
-  cursor: default;
-  animation: snowflakes-fall 10s linear infinite, snowflakes-shake 3s ease-in-out infinite;
-}
+    .snowflake {
+      position: absolute;
+      color: #fff;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0;
+      animation: snowfall linear infinite;
+    }
 
-@keyframes snowflakes-fall {
-  0% {
-    top: -10%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes snowflakes-shake {
-  0%, 100% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(80px);
-  }
-}
+    @keyframes snowfall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
