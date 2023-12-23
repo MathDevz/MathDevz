@@ -105,7 +105,7 @@
 
     // createParticles();
     // animateParticles();
-     const numSnowflakes = 100; // Adjust number of snowflakes
+ const numSnowflakes = 100; // Adjust number of snowflakes
 
     function createSnowflake() {
       const snowflake = document.createElement('span');
@@ -113,12 +113,16 @@
       snowflake.classList.add('snowflake');
 
       const initialX = Math.random() * window.innerWidth;
+      const initialY = Math.random() * window.innerHeight;
       const initialDelay = Math.random() * 5;
       const animationDuration = Math.random() * 10 + 5;
+      const size = Math.random() * 10 + 5;
 
       snowflake.style.left = `${initialX}px`;
+      snowflake.style.top = `${initialY}px`;
       snowflake.style.animationDuration = `${animationDuration}s`;
       snowflake.style.animationDelay = `${initialDelay}s`;
+      snowflake.style.fontSize = `${size}px`;
 
       document.body.appendChild(snowflake);
     }
@@ -130,12 +134,6 @@
     }
 
     generateSnowfall();
-  </script>
-<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-      new Crate({
-          server: '1187230712840065114', // Palladium Chat
-          channel: '1187230713834123276' // #general
-      })
   </script>
 </body>
 </html>
