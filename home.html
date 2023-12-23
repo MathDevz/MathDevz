@@ -106,6 +106,7 @@
     // createParticles();
     // animateParticles();
 // Function to create a snowflake element
+// Function to create a snowflake element
 function createSnowflake() {
   const snowflake = document.createElement('div');
   snowflake.classList.add('snowflake');
@@ -115,11 +116,12 @@ function createSnowflake() {
   // Set a random starting position along the top of the screen
   const startPosition = Math.random() * window.innerWidth;
   snowflake.style.left = `${startPosition}px`;
+  snowflake.style.top = '0';
 
   // Animate snowflake falling
   snowflake.animate(
     [
-      { transform: `translateY(-100vh)`, opacity: 1 },
+      { transform: `translateY(0)`, opacity: 1 },
       { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
     ],
     {
@@ -139,7 +141,6 @@ function createSnowfall() {
 
 // Start creating snowfall
 createSnowfall();
-
 
   </script>
 </body>
