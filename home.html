@@ -105,7 +105,7 @@
 
     // createParticles();
     // animateParticles();
-    function createSnowflake() {
+ function createSnowflake() {
       const snowflake = document.createElement('span');
       snowflake.innerHTML = '&bull;'; // You can change the snowflake symbol here
       snowflake.classList.add('snowflake');
@@ -131,7 +131,9 @@
     }
 
     function generateSnowfall() {
-      createSnowflake();
+      setInterval(() => {
+        createSnowflake();
+      }, 500); // Interval between creating new snowflakes (milliseconds)
     }
 
     generateSnowfall();
