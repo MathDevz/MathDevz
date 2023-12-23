@@ -39,11 +39,7 @@
     <a href="/main/Services.html">Services</a>
     <a href="/main/settings.html">Settings</a>
   </nav>
-<div class="snowflakes">
-  <!-- 10 snowflakes -->
-  <div class="snowflake">❄️</div>
-  <!-- Repeat this div for additional snowflakes -->
-</div>
+ <div class="snowflakes"></div>
   <section>
     <h2>Welcome to Palladium HQ</h2>
     <p>This is an experimental site, do not rely on anything working, thanks</p>
@@ -110,6 +106,30 @@
     // createParticles();
     // animateParticles();
 
+// Function to create a snowflake element
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄️';
+  document.querySelector('.snowflakes').appendChild(snowflake);
+  
+  // Animate snowflake falling
+  snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+  snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random duration for falling
+  snowflake.style.opacity = Math.random(); // Random opacity
+  snowflake.style.fontSize = `${Math.random() * 1.5}em`; // Random size
+  snowflake.style.animationDelay = `${Math.random() * 2}s`; // Random delay before starting fall
+}
+
+// Function to continuously add snowflakes
+function createSnowfall() {
+  setInterval(() => {
+    createSnowflake();
+  }, 200); // Adjust this value to control the rate of snowfall (milliseconds)
+}
+
+// Start creating snowfall
+createSnowfall();
 
   </script>
 </body>
