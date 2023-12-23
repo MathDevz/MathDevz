@@ -105,7 +105,6 @@
 
     // createParticles();
     // animateParticles();
-
 // Function to create a snowflake element
 function createSnowflake() {
   const snowflake = document.createElement('div');
@@ -113,12 +112,22 @@ function createSnowflake() {
   snowflake.textContent = '❄️';
   document.querySelector('.snowflakes').appendChild(snowflake);
   
+  // Set a random starting position along the top of the screen
+  const startPosition = Math.random() * window.innerWidth;
+  snowflake.style.left = `${startPosition}px`;
+
   // Animate snowflake falling
-  snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-  snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random duration for falling
-  snowflake.style.opacity = Math.random(); // Random opacity
-  snowflake.style.fontSize = `${Math.random() * 1.5}em`; // Random size
-  snowflake.style.animationDelay = `${Math.random() * 2}s`; // Random delay before starting fall
+  snowflake.animate(
+    [
+      { transform: `translateY(-100vh)`, opacity: 1 },
+      { transform: `translateY(${window.innerHeight}px)`, opacity: 0 }
+    ],
+    {
+      duration: Math.random() * 5000 + 3000, // Random duration for falling (between 3s and 8s)
+      easing: 'linear',
+      iterations: Infinity
+    }
+  );
 }
 
 // Function to continuously add snowflakes
@@ -130,6 +139,7 @@ function createSnowfall() {
 
 // Start creating snowfall
 createSnowfall();
+
 
   </script>
 </body>
