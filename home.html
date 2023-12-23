@@ -112,18 +112,24 @@ function generateSnowflakes() {
   const emojis = ["❄️"]; // Add more emojis if needed
   const container = document.querySelector('.snowflakes');
 
-  for (let i = 0; i < 50; i++) { // Adjust the number of emojis
+  function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
     snowflake.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
     snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random falling speed
     container.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove(); // Remove snowflake after animation ends
+    }, 5000); // Adjust based on your animation duration
   }
+
+  setInterval(createSnowflake, 500); // Interval to create new snowflakes
 }
 
-// Generate the snowflakes on page load
 window.addEventListener('load', generateSnowflakes);
+
 
   </script>
 </body>
