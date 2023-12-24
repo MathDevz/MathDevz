@@ -110,41 +110,6 @@
 // Function to create a snowflake element
 // Function to create a snowflake element
 // Function to create a snowflake element
-  function createSnowflake() {
-      const snowflake = document.createElement('span');
-      snowflake.innerHTML = '&bull;'; // You can change the snowflake symbol here
-      snowflake.classList.add('snowflake');
-
-      const initialX = Math.random() * window.innerWidth;
-      const initialY = -20; // Start snowflakes above the viewport
-      const initialDelay = Math.random() * 1;
-      const animationDuration = Math.random() * 2 + 1; // Adjusted speed here
-      const size = Math.random() * 10 + 5;
-
-      snowflake.style.left = `${initialX}px`;
-      snowflake.style.top = `${initialY}px`;
-      snowflake.style.animationDuration = `${animationDuration}s`;
-      snowflake.style.animationDelay = `${initialDelay}s`;
-      snowflake.style.fontSize = `${size}px`;
-
-      document.body.appendChild(snowflake);
-
-      setTimeout(() => {
-        snowflake.remove(); // Remove snowflake after it falls out of view
-        createSnowflake(); // Generate a new snowflake
-      }, animationDuration * 1000 + initialDelay * 1000);
-    }
-
-    function generateSnowfall() {
-      setInterval(() => {
-        for (let i = 0; i < 10; i++) { // Create 10 snowflakes per interval
-          createSnowflake();
-        }
-      }, 100); // Interval between creating new snowflakes (milliseconds)
-    }
-
-    generateSnowfall();
-
   </script>
 </body>
 </html>
